@@ -9,16 +9,16 @@
     content="Cập nhật lịch khai giảng và tình trạng chỗ trống (slot) các lớp học tiếng Anh tại 4 chi nhánh Gia Việt." />
   <link rel="icon" type="image/png" href="favicon.png" />
 
-  <!-- Fonts & Icons -->
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
     rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Material&#43;Symbols&#43;Outlined:wght,FILL@100..700,0..1&amp;display=swap"
     rel="stylesheet" />
 
-  <!-- Tailwind CSS via CDN -->
+  
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <script>
     tailwind.config = {
@@ -81,7 +81,7 @@
 
 <body class="text-slate-800 font-body selection:bg-primary-light selection:text-white overflow-x-hidden">
 
-  <!-- Header -->
+  
   <header class="fixed top-0 w-full z-50 glass-header px-4 md:px-8 py-4 flex justify-between items-center shadow-sm">
     <div class="flex items-center gap-3">
       <img src="./logo.png" alt="Logo Gia Việt" class="h-10 md:h-12 w-auto object-contain" />
@@ -99,7 +99,7 @@
 
   <main class="pt-[100px] pb-24">
 
-    <!-- Hero Banner (Lịch Khai Giảng) -->
+    
     <section id="schedule" class="max-w-6xl mx-auto px-4 mb-12">
       <div class="bg-gradient-to-r from-primary to-blue-800 rounded-[2rem] p-10 md:p-16 text-center shadow-2xl relative overflow-hidden">
         <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
@@ -120,7 +120,7 @@
       </div>
     </section>
 
-    <!-- Branch Selection Tabs -->
+    
     <section class="max-w-6xl mx-auto px-4 mb-16">
       <div class="flex flex-wrap justify-center gap-3 md:gap-5 mb-10">
         <button onclick="switchBranch('truso')" id="btn-truso" class="branch-tab active bg-white border border-slate-200 text-slate-700 px-6 py-4 rounded-2xl font-bold flex items-center gap-2 hover:bg-slate-50 transition-all shadow-sm">
@@ -138,10 +138,9 @@
         <button onclick="switchBranch('cnbinhminh')" id="btn-cnbinhminh" class="branch-tab bg-white border border-slate-200 text-slate-700 px-6 py-4 rounded-2xl font-bold flex items-center gap-2 hover:bg-slate-50 transition-all shadow-sm">
           <span class="material-symbols-outlined text-xl">storefront</span>
           Chi nhánh Bình Minh
-        </button>
-      </div>
+        </button>      </div>
 
-      <!-- Content Area -->
+      
       <div class="relative">
 
         <div id="tab-truso" class="branch-content animate-fade-in block">
@@ -168,42 +167,342 @@
 
                 <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
                   <td class="p-4 pl-6">
-                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">EFT - Global Teens 1A</div>
-                    <div class="text-xs text-slate-400 font-semibold mt-0.5">17:45 - 19:15</div>
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">YLE Movers</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">09:30 - 11:30</div>
                   </td>
-                  <td class="p-4 font-semibold text-slate-600">13/07/2026</td>
-                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
-                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.800.000đ</td>
-                </tr>
-
-                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
-                  <td class="p-4 pl-6">
-                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">Family & Friends 1A</div>
-                    <div class="text-xs text-slate-400 font-semibold mt-0.5">17:45 - 19:15</div>
-                  </td>
-                  <td class="p-4 font-semibold text-slate-600">13/07/2026</td>
+                  <td class="p-4 font-semibold text-slate-600">11/07/2026</td>
                   <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-red-50 text-red-600 border border-red-100 animate-[pulse_2s_ease-in-out_infinite]"><span class="w-1.5 h-1.5 rounded-full bg-red-500"></span> Sắp hết slot</span></td>
                   <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
                 </tr>
 
                 <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
                   <td class="p-4 pl-6">
-                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">First Friends 1A</div>
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">EFT - Global Teens 1A</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">09:30 - 11:30</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">11/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-red-50 text-red-600 border border-red-100 animate-[pulse_2s_ease-in-out_infinite]"><span class="w-1.5 h-1.5 rounded-full bg-red-500"></span> Sắp hết slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.800.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">Family & Friends 2B</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">15:00 - 17:00</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">11/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">EFT - Global Teens 3A</div>
                     <div class="text-xs text-slate-400 font-semibold mt-0.5">17:45 - 19:15</div>
                   </td>
-                  <td class="p-4 font-semibold text-slate-600">15/07/2026</td>
+                  <td class="p-4 font-semibold text-slate-600">13/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.800.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">EFT - Global Teens 1B</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">17:45 - 19:15</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">13/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.800.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">Family & Friends 1B</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">17:45 - 19:15</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">14/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">Family & Friends 2B</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">17:45 - 19:15</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">14/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">First Friends 2C</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">17:45 - 19:15</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">20/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">Family & Friends 2C</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">07:15 - 09:15</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">25/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-red-50 text-red-600 border border-red-100 animate-[pulse_2s_ease-in-out_infinite]"><span class="w-1.5 h-1.5 rounded-full bg-red-500"></span> Sắp hết slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">Family & Friends 1B</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">07:15 - 09:15</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">25/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">Family & Friends 4B</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">07:15 - 09:15</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">25/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">Family & Friends 2B</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">09:30 - 11:30</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">25/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">Family & Friends 3A</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">15:00 - 17:00</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">25/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">Family & Friends 3C</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">15:00 - 17:00</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">25/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">EFT - Global Teens 3B</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">17:45 - 19:15</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">27/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.800.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">EFT - Global Teens 4A</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">17:45 - 19:15</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">27/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.800.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">KET for Schools</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">19:30 - 21:00</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">27/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.800.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">First Friends 1B</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">17:45 - 19:15</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">27/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">EFT - Global Teens 4A</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">17:45 - 19:15</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">28/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.800.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">EFT - Global Teens 1B</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">17:45 - 19:15</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">28/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.800.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">EFT - Global Teens 2A</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">15:00 - 17:00</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">04/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.800.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">YLE Starters</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">07:15 - 09:15</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">04/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.300.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">Family & Friends 2C</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">09:30 - 11:30</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">04/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">Family & Friends 3A</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">09:30 - 11:30</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">04/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">Family & Friends 4B</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">09:30 - 11:30</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">04/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">Family & Friends 2A</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">15:00 - 17:00</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">04/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">EFT - Global Teens 4B</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">17:45 - 19:15</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">07/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-500 border border-slate-200"><span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span> Hết slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.800.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">Family & Friends 3B</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">17:45 - 19:15</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">07/07/2026</td>
                   <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-500 border border-slate-200"><span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span> Hết slot</span></td>
                   <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
                 </tr>
 
                 <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
                   <td class="p-4 pl-6">
-                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">EFT - Foundation 1</div>
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">Happy Kinder 3</div>
                     <div class="text-xs text-slate-400 font-semibold mt-0.5">17:45 - 19:15</div>
                   </td>
-                  <td class="p-4 font-semibold text-slate-600">20/07/2026</td>
+                  <td class="p-4 font-semibold text-slate-600">08/07/2026</td>
                   <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">EFT - Foundation 2</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">07:15 - 09:15</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">11/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-red-50 text-red-600 border border-red-100 animate-[pulse_2s_ease-in-out_infinite]"><span class="w-1.5 h-1.5 rounded-full bg-red-500"></span> Sắp hết slot</span></td>
                   <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.800.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">EFT - Global Teens 2A</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">09:30 - 11:30</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">11/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-red-50 text-red-600 border border-red-100 animate-[pulse_2s_ease-in-out_infinite]"><span class="w-1.5 h-1.5 rounded-full bg-red-500"></span> Sắp hết slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.800.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">EFT - Global Teens 1B</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">15:00 - 17:00</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">11/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-red-50 text-red-600 border border-red-100 animate-[pulse_2s_ease-in-out_infinite]"><span class="w-1.5 h-1.5 rounded-full bg-red-500"></span> Sắp hết slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.800.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">First Friends 1A</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">09:30 - 11:00</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">25/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">Family & Friends Starter A</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">09:30 - 11:30</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">11/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
                 </tr>
               </tbody>
             </table>
@@ -224,8 +523,48 @@
 
                 <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
                   <td class="p-4 pl-6">
-                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">EFL B1+ (In-house Book)</div>
-                    <div class="text-xs text-slate-400 font-semibold mt-0.5">Tối 357 (19:30 - 21:00)</div>
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">PRE-IELTS</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">246</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">13/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-500 border border-slate-200"><span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span> Hết slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">3.200.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">EFL B1 (In-house Book)</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">Tối 357</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">06/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.800.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">IELTS 5.5</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">246CN</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">27/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">3.800.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">IELTS 5.5 FOR TEENS B</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">17:45 - 19:15</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">16/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.800.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">EFL B1 (In-house Book)</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">Tối 246</div>
                   </td>
                   <td class="p-4 font-semibold text-slate-600">13/07/2026</td>
                   <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
@@ -234,22 +573,62 @@
 
                 <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
                   <td class="p-4 pl-6">
-                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">IELTS 5.5</div>
-                    <div class="text-xs text-slate-400 font-semibold mt-0.5">Tối 246 (19:30 - 21:00)</div>
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">IELTS 5.5 FOR TEENS B</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">19:30 - 21:00</div>
                   </td>
-                  <td class="p-4 font-semibold text-slate-600">15/07/2026</td>
-                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-red-50 text-red-600 border border-red-100 animate-[pulse_2s_ease-in-out_infinite]"><span class="w-1.5 h-1.5 rounded-full bg-red-500"></span> Sắp hết slot</span></td>
+                  <td class="p-4 font-semibold text-slate-600">16/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.800.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">EFL B1+ (In-house Book)</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">Tối 246</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">13/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.800.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">IELTS 6.5</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">357CN</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">14/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
                   <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">3.800.000đ</td>
                 </tr>
 
                 <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
                   <td class="p-4 pl-6">
-                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">PRE-IELTS (In-house Book)</div>
-                    <div class="text-xs text-slate-400 font-semibold mt-0.5">Tối 357 (19:30 - 21:00)</div>
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">EFL A2 (In-house Book)</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">Tối 246</div>
                   </td>
-                  <td class="p-4 font-semibold text-slate-600">20/07/2026</td>
+                  <td class="p-4 font-semibold text-slate-600">06/07/2026</td>
                   <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-500 border border-slate-200"><span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span> Hết slot</span></td>
-                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">3.200.000đ</td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.800.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">EFL A2 (In-house Book)</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">Tối 246</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">22/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.800.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">PRE-IELTS FOR TEENS B</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">Tối 246</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">06/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.800.000đ</td>
                 </tr>
               </tbody>
             </table>
@@ -280,8 +659,28 @@
 
                 <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
                   <td class="p-4 pl-6">
-                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">EFT - Foundation 1</div>
-                    <div class="text-xs text-slate-400 font-semibold mt-0.5">17:45 - 19:15</div>
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">Family & Friends 3C</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">09:00 - 11:00</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">04/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">Family & Friends 1A</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">18:30 - 20:30</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">07/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-500 border border-slate-200"><span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span> Hết slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">EFT - Global Teens 1B</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">18:00 - 20:00</div>
                   </td>
                   <td class="p-4 font-semibold text-slate-600">14/07/2026</td>
                   <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
@@ -290,21 +689,61 @@
 
                 <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
                   <td class="p-4 pl-6">
-                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">First Friends 1A</div>
-                    <div class="text-xs text-slate-400 font-semibold mt-0.5">17:45 - 19:15</div>
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">EFT - Global Teens 3A</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">18:30 - 20:30</div>
                   </td>
-                  <td class="p-4 font-semibold text-slate-600">16/07/2026</td>
+                  <td class="p-4 font-semibold text-slate-600">14/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.800.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">Family & Friends 2B</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">18:30 - 20:30</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">14/07/2026</td>
                   <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
                   <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
                 </tr>
 
                 <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
                   <td class="p-4 pl-6">
-                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">Family & Friends Starters A</div>
-                    <div class="text-xs text-slate-400 font-semibold mt-0.5">17:45 - 19:15</div>
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">Family & Friends 1C</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">18:30 - 20:30</div>
                   </td>
-                  <td class="p-4 font-semibold text-slate-600">18/07/2026</td>
-                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-red-50 text-red-600 border border-red-100 animate-[pulse_2s_ease-in-out_infinite]"><span class="w-1.5 h-1.5 rounded-full bg-red-500"></span> Sắp hết slot</span></td>
+                  <td class="p-4 font-semibold text-slate-600">15/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">YLE Movers</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">18:30 - 20:30</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">15/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">First Friends 2C</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">18:30 - 20:00</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">21/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">Family & Friends 2C</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">18:30 - 20:30</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">29/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
                   <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
                 </tr>
               </tbody>
@@ -323,16 +762,7 @@
                 </tr>
               </thead>
               <tbody class="text-slate-700 font-medium text-sm">
-
-                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
-                  <td class="p-4 pl-6">
-                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">EFL A2 (In-house Book)</div>
-                    <div class="text-xs text-slate-400 font-semibold mt-0.5">Tối 357 (19:30 - 21:00)</div>
-                  </td>
-                  <td class="p-4 font-semibold text-slate-600">13/07/2026</td>
-                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
-                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.800.000đ</td>
-                </tr>
+<tr><td colspan="4" class="p-6 text-center text-slate-400 font-medium">Chưa có lớp khai giảng được cập nhật.</td></tr>
               </tbody>
             </table>
           </div>
@@ -362,31 +792,21 @@
 
                 <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
                   <td class="p-4 pl-6">
-                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">First Friends 1A</div>
-                    <div class="text-xs text-slate-400 font-semibold mt-0.5">17:45 - 19:15</div>
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">EFT - Global Teens 1B</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">17:30 - 19:30</div>
                   </td>
-                  <td class="p-4 font-semibold text-slate-600">13/07/2026</td>
-                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
-                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
-                </tr>
-
-                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
-                  <td class="p-4 pl-6">
-                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">Family & Friends 1A</div>
-                    <div class="text-xs text-slate-400 font-semibold mt-0.5">17:45 - 19:15</div>
-                  </td>
-                  <td class="p-4 font-semibold text-slate-600">13/07/2026</td>
-                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
-                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
-                </tr>
-
-                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
-                  <td class="p-4 pl-6">
-                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">Ngữ pháp Hè (THCS)</div>
-                    <div class="text-xs text-slate-400 font-semibold mt-0.5">17:45 - 19:15</div>
-                  </td>
-                  <td class="p-4 font-semibold text-slate-600">15/07/2026</td>
+                  <td class="p-4 font-semibold text-slate-600">07/07/2026</td>
                   <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-red-50 text-red-600 border border-red-100 animate-[pulse_2s_ease-in-out_infinite]"><span class="w-1.5 h-1.5 rounded-full bg-red-500"></span> Sắp hết slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.800.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">Family & Friends 1B</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">08:00 - 10:00</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">04/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
                   <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
                 </tr>
               </tbody>
@@ -405,16 +825,7 @@
                 </tr>
               </thead>
               <tbody class="text-slate-700 font-medium text-sm">
-
-                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
-                  <td class="p-4 pl-6">
-                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">IELTS LUYỆN THI</div>
-                    <div class="text-xs text-slate-400 font-semibold mt-0.5">Tối 246 (19:30 - 21:00)</div>
-                  </td>
-                  <td class="p-4 font-semibold text-slate-600">20/07/2026</td>
-                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
-                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">4.500.000đ</td>
-                </tr>
+<tr><td colspan="4" class="p-6 text-center text-slate-400 font-medium">Chưa có lớp khai giảng được cập nhật.</td></tr>
               </tbody>
             </table>
           </div>
@@ -444,10 +855,40 @@
 
                 <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
                   <td class="p-4 pl-6">
-                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">First Friends 1A</div>
-                    <div class="text-xs text-slate-400 font-semibold mt-0.5">17:45 - 19:15</div>
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">Family & Friends 3B</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">07:30 - 09:30</div>
                   </td>
-                  <td class="p-4 font-semibold text-slate-600">13/07/2026</td>
+                  <td class="p-4 font-semibold text-slate-600">18/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">Family & Friends 2B</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">07:30 - 09:30</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">18/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">Family & Friends 2C</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">09:30 - 11:30</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">18/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">Family & Friends 3C</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">17:30 - 19:30</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">15/07/2026</td>
                   <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
                   <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
                 </tr>
@@ -455,11 +896,41 @@
                 <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
                   <td class="p-4 pl-6">
                     <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">Family & Friends 1A</div>
-                    <div class="text-xs text-slate-400 font-semibold mt-0.5">17:45 - 19:15</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">17:30 - 19:30</div>
                   </td>
-                  <td class="p-4 font-semibold text-slate-600">13/07/2026</td>
-                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-500 border border-slate-200"><span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span> Hết slot</span></td>
+                  <td class="p-4 font-semibold text-slate-600">15/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
                   <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.500.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">YLE Starters</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">09:30 - 11:30</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">25/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.300.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">EFT - Global Teens 1A</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">17:30 - 19:30</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">28/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.800.000đ</td>
+                </tr>
+
+                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
+                  <td class="p-4 pl-6">
+                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">EFT - Global Teens 4A</div>
+                    <div class="text-xs text-slate-400 font-semibold mt-0.5">17:30 - 19:30</div>
+                  </td>
+                  <td class="p-4 font-semibold text-slate-600">29/07/2026</td>
+                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
+                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.800.000đ</td>
                 </tr>
               </tbody>
             </table>
@@ -477,24 +948,14 @@
                 </tr>
               </thead>
               <tbody class="text-slate-700 font-medium text-sm">
-
-                <tr class="border-b border-slate-50 hover:bg-blue-50/30 transition-colors group">
-                  <td class="p-4 pl-6">
-                    <div class="font-bold text-[#002c66] group-hover:text-[#1a4a99] transition-colors">IELTS 4.5 FOR TEENS A</div>
-                    <div class="text-xs text-slate-400 font-semibold mt-0.5">Tối 246 (19:30 - 21:00)</div>
-                  </td>
-                  <td class="p-4 font-semibold text-slate-600">15/07/2026</td>
-                  <td class="p-4"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 text-emerald-600 border border-emerald-100"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Còn slot</span></td>
-                  <td class="p-4 pr-6 font-black text-[#002c66] text-right text-[15px]">2.800.000đ</td>
-                </tr>
+<tr><td colspan="4" class="p-6 text-center text-slate-400 font-medium">Chưa có lớp khai giảng được cập nhật.</td></tr>
               </tbody>
             </table>
           </div>
-        </div>
-      </div>
+        </div>      </div>
     </section>
 
-    <!-- Pricing / Programs Section -->
+    
     <section id="pricing" class="py-20 px-4 bg-white border-t border-slate-100">
       <div class="max-w-5xl mx-auto">
         <div class="text-center mb-12">
@@ -512,7 +973,7 @@
         </div>
 
         <div class="bg-white rounded-[2.5rem] shadow-[0_45px_90px_-20px_rgba(0,44,102,0.15)] border border-slate-100 overflow-hidden min-h-[300px]">
-          <!-- Tab Kids -->
+          
           <div id="tab-kids" class="tab-content p-8 md:p-12 animate-fade-in block">
             <h3 class="font-headline font-black text-2xl text-primary mb-6 flex items-center gap-3"><span
                 class="material-symbols-outlined text-secondary">child_care</span> Tiếng Anh Mầm non & Thiếu nhi</h3>
@@ -541,7 +1002,7 @@
             </div>
           </div>
 
-          <!-- Tab Teens -->
+          
           <div id="tab-teens" class="tab-content p-8 md:p-12 animate-fade-in hidden">
             <h3 class="font-headline font-black text-2xl text-primary mb-6 flex items-center gap-3"><span
                 class="material-symbols-outlined text-secondary">school</span> Tiếng Anh Thiếu niên</h3>
@@ -565,7 +1026,7 @@
             </div>
           </div>
 
-          <!-- Tab Adults -->
+          
           <div id="tab-adults" class="tab-content p-8 md:p-12 animate-fade-in hidden">
             <h3 class="font-headline font-black text-2xl text-primary mb-6 flex items-center gap-3"><span
                 class="material-symbols-outlined text-secondary">workspace_premium</span> Tiếng Anh Người lớn & Luyện thi</h3>
@@ -592,7 +1053,7 @@
           </div>
         </div>
 
-        <!-- High-Impact Promo Banner (Updated for 8% Existing Students) -->
+        
         <div class="mt-12">
           <div class="relative bg-gradient-to-r from-[#002c66] to-[#004aab] rounded-[2rem] p-8 md:p-12 shadow-2xl overflow-hidden group">
             <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-20 -mt-20 blur-3xl animate-pulse-soft"></div>
@@ -618,7 +1079,7 @@
 
 
 
-    <!-- Quyền Lợi Section -->
+    
     <section id="privileges" class="py-24 px-4 bg-gradient-to-br from-blue-50 via-white to-indigo-50/50">
       <div class="max-w-6xl mx-auto">
         <div class="text-center mb-16">
@@ -629,7 +1090,7 @@
         </div>
 
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- Card 1 -->
+          
           <div
             class="group bg-gradient-to-br from-white to-blue-50/30 rounded-[2rem] p-8 border-2 border-transparent hover:border-blue-200 shadow-lg hover:shadow-[0_20px_40px_rgba(59,130,246,0.15)] hover:-translate-y-2 transition-all duration-300">
             <div
@@ -642,7 +1103,7 @@
             <p class="text-slate-500 text-sm font-medium leading-relaxed">Đánh giá chính xác trình độ hiện tại của bạn hoàn toàn <strong class="text-blue-600">Miễn Phí</strong>.</p>
           </div>
 
-          <!-- Card 2 -->
+          
           <div
             class="group bg-gradient-to-br from-white to-emerald-50/30 rounded-[2rem] p-8 border-2 border-transparent hover:border-emerald-200 shadow-lg hover:shadow-[0_20px_40px_rgba(16,185,129,0.15)] hover:-translate-y-2 transition-all duration-300">
             <div
@@ -655,7 +1116,7 @@
             <p class="text-slate-500 text-sm font-medium leading-relaxed">Được cung cấp đầy đủ giáo trình, tài liệu ôn tập bám sát thực tế kỳ thi.</p>
           </div>
 
-          <!-- Card 3 -->
+          
           <div
             class="group bg-gradient-to-br from-white to-rose-50/30 rounded-[2rem] p-8 border-2 border-transparent hover:border-rose-200 shadow-lg hover:shadow-[0_20px_40px_rgba(244,63,94,0.15)] hover:-translate-y-2 transition-all duration-300">
             <div
@@ -668,7 +1129,7 @@
             <p class="text-slate-500 text-sm font-medium leading-relaxed">Hỗ trợ thi thử IELTS và tham gia <strong class="text-blue-600">miễn phí</strong> IELTS Speaking Mock Test Club.</p>
           </div>
 
-          <!-- Card 4 -->
+          
           <div
             class="group bg-gradient-to-br from-white to-amber-50/30 rounded-[2rem] p-8 border-2 border-transparent hover:border-amber-200 shadow-lg hover:shadow-[0_20px_40px_rgba(245,158,11,0.15)] hover:-translate-y-2 transition-all duration-300">
             <div
@@ -681,7 +1142,7 @@
             <p class="text-slate-500 text-sm font-medium leading-relaxed">Tham gia các hoạt động và trò chơi thú vị hàng tháng cùng E-zone.</p>
           </div>
 
-          <!-- Card 5 -->
+          
           <div
             class="group bg-gradient-to-br from-white to-purple-50/30 rounded-[2rem] p-8 border-2 border-transparent hover:border-purple-200 shadow-lg hover:shadow-[0_20px_40px_rgba(168,85,247,0.15)] hover:-translate-y-2 transition-all duration-300">
             <div
@@ -694,7 +1155,7 @@
             <p class="text-slate-500 text-sm font-medium leading-relaxed">Tham gia Câu lạc bộ Chatty Club <strong class="text-blue-600">miễn phí</strong> và nhiều workshop hữu ích khác tại 4Cs Cafe.</p>
           </div>
 
-          <!-- Card 6 -->
+          
           <div
             class="group bg-gradient-to-br from-white to-cyan-50/30 rounded-[2rem] p-8 border-2 border-transparent hover:border-cyan-200 shadow-lg hover:shadow-[0_20px_40px_rgba(6,182,212,0.15)] hover:-translate-y-2 transition-all duration-300">
             <div
@@ -707,7 +1168,7 @@
             <p class="text-slate-500 text-sm font-medium leading-relaxed">Ưu đãi <strong class="text-red-600">giảm ngay 10%</strong> tổng hóa đơn thức uống và đồ ăn nhẹ tại 4Cs Cafe.</p>
           </div>
 
-          <!-- Card 7 -->
+          
           <div
             class="group bg-gradient-to-br from-white to-teal-50/30 rounded-[2rem] p-8 border-2 border-transparent hover:border-teal-200 shadow-lg hover:shadow-[0_20px_40px_rgba(20,184,166,0.15)] hover:-translate-y-2 transition-all duration-300">
             <div
@@ -720,7 +1181,7 @@
             <p class="text-slate-500 text-sm font-medium leading-relaxed">Đọc sách <strong class="text-blue-600">miễn phí</strong> tại thư viện 4Cs với hơn 2500 đầu sách đa dạng.</p>
           </div>
 
-          <!-- Card 8 -->
+          
           <div
             class="group bg-gradient-to-br from-white to-indigo-50/30 rounded-[2rem] p-8 border-2 border-transparent hover:border-indigo-200 shadow-lg hover:shadow-[0_20px_40px_rgba(99,102,241,0.15)] hover:-translate-y-2 transition-all duration-300">
             <div
@@ -733,7 +1194,7 @@
             <p class="text-slate-500 text-sm font-medium leading-relaxed">Hỗ trợ tư vấn du học và trại hè quốc tế cùng Du học VISA.</p>
           </div>
 
-          <!-- Card 9 -->
+          
           <div
             class="group bg-gradient-to-br from-white to-pink-50/30 rounded-[2rem] p-8 border-2 border-transparent hover:border-pink-200 shadow-lg hover:shadow-[0_20px_40px_rgba(236,72,153,0.15)] hover:-translate-y-2 transition-all duration-300">
             <div
@@ -749,7 +1210,7 @@
       </div>
     </section>
 
-    <!-- Final CTA -->
+    
     <section class="py-24 px-4 bg-white border-t border-slate-50">
       <div class="max-w-6xl mx-auto">
         <div class="bg-gradient-to-r from-primary to-blue-900 p-12 md:p-20 rounded-[3rem] text-center text-white shadow-2xl relative overflow-hidden">
@@ -775,14 +1236,14 @@
 
   </main>
 
-  <!-- Footer -->
+  
   <footer class="bg-[#001a3d] text-white py-12 px-4 border-t border-blue-950">
     <div class="max-w-6xl mx-auto text-center">
       <img src="./logo.png" alt="Logo Gia Việt" class="h-12 w-auto object-contain mx-auto mb-6 brightness-0 invert opacity-90" />
       
-      <!-- Locations List in Footer -->
+      
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-6xl mx-auto mb-10 text-blue-200 text-sm text-left border-t border-blue-900/50 pt-8 mt-4">
-        <!-- Head Office -->
+        
         <div>
           <div class="flex items-center gap-2 mb-3">
             <span class="material-symbols-outlined text-secondary text-[20px]">location_city</span>
@@ -792,7 +1253,7 @@
           <a href="tel:02923831000" class="block font-bold text-secondary hover:text-white transition-colors">0292 383 1000</a>
         </div>
 
-        <!-- Branch 30/4 -->
+        
         <div>
           <div class="flex items-center gap-2 mb-3">
             <span class="material-symbols-outlined text-secondary text-[20px]">storefront</span>
@@ -802,7 +1263,7 @@
           <a href="tel:02922209000" class="block font-bold text-secondary hover:text-white transition-colors">0292 220 9000</a>
         </div>
 
-        <!-- Branch Binh Minh -->
+        
         <div>
           <div class="flex items-center gap-2 mb-3">
             <span class="material-symbols-outlined text-secondary text-[20px]">storefront</span>
@@ -812,7 +1273,7 @@
           <a href="tel:02706555000" class="block font-bold text-secondary hover:text-white transition-colors">0270 655 5000</a>
         </div>
 
-        <!-- Branch O Mon -->
+        
         <div>
           <div class="flex items-center gap-2 mb-3">
             <span class="material-symbols-outlined text-secondary text-[20px]">storefront</span>
@@ -832,19 +1293,19 @@
 
   <script>
     function switchBranch(branchId) {
-      // Hide all content
+      
       document.querySelectorAll('.branch-content').forEach(el => el.classList.add('hidden'));
 
-      // Reset all buttons
+      
       document.querySelectorAll('.branch-tab').forEach(el => {
         el.classList.remove('active', 'bg-gradient-to-r', 'from-[#002c66]', 'to-[#1a4a99]', 'text-white', 'shadow-[0_10px_25px_-5px_rgba(0,44,102,0.4)]');
         el.classList.add('bg-white', 'text-slate-700');
       });
 
-      // Show selected content
+      
       document.getElementById('tab-' + branchId).classList.remove('hidden');
 
-      // Highlight selected button
+      
       const activeBtn = document.getElementById('btn-' + branchId);
       activeBtn.classList.remove('bg-white', 'text-slate-700');
       activeBtn.classList.add('active', 'bg-gradient-to-r', 'from-[#002c66]', 'to-[#1a4a99]', 'text-white', 'shadow-[0_10px_25px_-5px_rgba(0,44,102,0.4)]');
@@ -862,7 +1323,7 @@
     }
   </script>
 
-  <!-- Sticky Promotion Widget -->
+  
   <a href="https://zalo.me/0962460077" target="_blank" class="fixed top-1/2 right-0 -translate-y-1/2 z-50 flex items-center group cursor-pointer transition-transform hover:-translate-x-2">
     <div class="bg-gradient-to-l from-amber-600 to-orange-500 text-white p-3 py-6 rounded-l-2xl shadow-[-5px_0_20px_rgba(245,158,11,0.3)] flex flex-col items-center gap-2 border-y border-l border-amber-400">
       <span class="material-symbols-outlined text-3xl animate-bounce">stars</span>
