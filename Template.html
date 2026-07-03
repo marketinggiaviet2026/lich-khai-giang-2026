@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lịch Khai Giảng & Cập Nhật Sĩ Số | Gia Việt</title>
+  <meta name="description"
+    content="Cập nhật lịch khai giảng và tình trạng chỗ trống (slot) các lớp học tiếng Anh tại 4 chi nhánh Gia Việt." />
+  <link rel="icon" type="image/png" href="favicon.png" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#002c66",
+            "primary-light": "#1a4a99",
+            "secondary": "#db1432",
+            "secondary-dark": "#b7102a",
+          },
+          fontFamily: {
+            "headline": ["Manrope", "sans-serif"],
+            "body": ["Inter", "sans-serif"],
+          },
+          animation: {
+            'pulse-soft': 'pulse-soft 2s infinite',
+          },
+          keyframes: {
+            'pulse-soft': {
+              '0%, 100%': { transform: 'scale(1)', boxShadow: '0 0 0 rgba(219, 20, 50, 0)' },
+              '50%': { transform: 'scale(1.02)', boxShadow: '0 0 20px rgba(219, 20, 50, 0.2)' },
+            }
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    body {
+      background-color: #f8fafc;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .glass-header {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .branch-tab.active {
+      background: linear-gradient(135deg, #002c66 0%, #1a4a99 100%);
+      color: white;
+      box-shadow: 0 10px 25px -5px rgba(0, 44, 102, 0.4);
+      transform: translateY(-2px);
+      border-color: transparent;
+    }
+
+    .course-card {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .course-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+
+<body class="text-slate-800 font-body selection:bg-primary-light selection:text-white overflow-x-hidden">
+
+  <!-- Header -->
+  <header class="fixed top-0 w-full z-50 glass-header px-4 md:px-8 py-4 flex justify-between items-center shadow-sm">
+    <div class="flex items-center gap-3">
+      <img src="./logo.png" alt="Logo Gia Việt" class="h-10 md:h-12 w-auto object-contain" />
+    </div>
+    <div class="hidden lg:flex items-center gap-4 xl:gap-8 font-extrabold text-slate-600 text-xs uppercase tracking-widest">
+      <a href="#schedule" class="hover:text-primary transition-colors text-primary">Lịch Khai Giảng</a>
+      <a href="#pricing" class="hover:text-primary transition-colors">Các Chương Trình Đào Tạo</a>
+      <a href="#privileges" class="hover:text-primary transition-colors">Đặc quyền</a>
+    </div>
+    <a href="https://zalo.me/0962460077" target="_blank"
+      class="bg-secondary hover:bg-secondary-dark text-white px-6 py-2.5 rounded-full font-headline font-bold text-sm tracking-wide shadow-lg active:scale-95">
+      ĐĂNG KÝ NGAY
+    </a>
+  </header>
+
+  <main class="pt-[100px] pb-24">
+
+    <!-- Hero Banner (Lịch Khai Giảng) -->
+    <section id="schedule" class="max-w-6xl mx-auto px-4 mb-12">
+      <div class="bg-gradient-to-r from-primary to-blue-800 rounded-[2rem] p-10 md:p-16 text-center shadow-2xl relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary/20 rounded-full blur-3xl -ml-20 -mb-20"></div>
+
+        <div class="relative z-10">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500 text-white text-xs font-extrabold tracking-wide uppercase mb-6 shadow-md border border-amber-400">
+            <span class="material-symbols-outlined text-sm">workspace_premium</span>
+            Ưu đãi 8% học phí cho Học viên cũ
+          </div>
+          <h1 class="font-headline font-black text-3xl md:text-5xl text-white uppercase tracking-tight leading-tight mb-4">
+            Lịch Khai Giảng & <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-rose-600">Cập Nhật Sĩ Số</span>
+          </h1>
+          <p class="text-blue-100 font-medium max-w-2xl mx-auto">
+            Quý Phụ huynh vui lòng chọn chi nhánh gần nhất để xem lịch học phù hợp.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Branch Selection Tabs -->
+    <section class="max-w-6xl mx-auto px-4 mb-16">
+      <div class="flex flex-wrap justify-center gap-3 md:gap-5 mb-10">
+<?!= tabButtons ?>
+      </div>
+
+      <!-- Content Area -->
+      <div class="relative">
+<?!= tabContents ?>
+      </div>
+    </section>
+
+    <!-- Pricing / Programs Section -->
+    <section id="pricing" class="py-20 px-4 bg-white border-t border-slate-100">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+          <span class="text-secondary font-black tracking-widest text-base uppercase block mb-3">Tất cả chi nhánh | Đa dạng cấp độ</span>
+          <h2 class="font-headline font-black text-3xl md:text-4xl text-primary uppercase">Các Chương Trình Đào Tạo</h2>
+        </div>
+
+        <div class="mb-8 flex flex-wrap justify-center gap-4">
+          <button onclick="switchTab('kids')" id="btn-kids"
+            class="tab-btn active bg-[#002c66] text-white px-8 py-3 rounded-full font-bold shadow-lg transition-all">Mầm non – Thiếu nhi</button>
+          <button onclick="switchTab('teens')" id="btn-teens"
+            class="tab-btn bg-slate-100 text-slate-600 px-8 py-3 rounded-full font-bold hover:bg-slate-200 transition-all">Thiếu niên</button>
+          <button onclick="switchTab('adults')" id="btn-adults"
+            class="tab-btn bg-slate-100 text-slate-600 px-8 py-3 rounded-full font-bold hover:bg-slate-200 transition-all">Người lớn</button>
+        </div>
+
+        <div class="bg-white rounded-[2.5rem] shadow-[0_45px_90px_-20px_rgba(0,44,102,0.15)] border border-slate-100 overflow-hidden min-h-[300px]">
+          <!-- Tab Kids -->
+          <div id="tab-kids" class="tab-content p-8 md:p-12 animate-fade-in block">
+            <h3 class="font-headline font-black text-2xl text-primary mb-6 flex items-center gap-3"><span
+                class="material-symbols-outlined text-secondary">child_care</span> Tiếng Anh Mầm non & Thiếu nhi</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+              <div class="bg-blue-50/50 p-6 rounded-2xl border border-blue-100/50 hover:shadow-md transition-all">
+                <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-blue-600 mb-4 shadow-sm">
+                  <span class="material-symbols-outlined">toys</span>
+                </div>
+                <h4 class="font-bold text-slate-800 text-lg mb-2">Happy Kinder</h4>
+                <p class="text-slate-500 text-sm">Chương trình mầm non, làm quen tiếng Anh qua trò chơi và bài hát.</p>
+              </div>
+              <div class="bg-blue-50/50 p-6 rounded-2xl border border-blue-100/50 hover:shadow-md transition-all">
+                <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-blue-600 mb-4 shadow-sm">
+                  <span class="material-symbols-outlined">sentiment_very_satisfied</span>
+                </div>
+                <h4 class="font-bold text-slate-800 text-lg mb-2">First Friends</h4>
+                <p class="text-slate-500 text-sm">Xây dựng nền tảng từ vựng và giao tiếp cơ bản cho thiếu nhi.</p>
+              </div>
+              <div class="bg-blue-50/50 p-6 rounded-2xl border border-blue-100/50 hover:shadow-md transition-all">
+                <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-blue-600 mb-4 shadow-sm">
+                  <span class="material-symbols-outlined">family_restroom</span>
+                </div>
+                <h4 class="font-bold text-slate-800 text-lg mb-2">Family & Friends</h4>
+                <p class="text-slate-500 text-sm">Phát triển toàn diện 4 kỹ năng chuẩn Cambridge cho học sinh tiểu học.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab Teens -->
+          <div id="tab-teens" class="tab-content p-8 md:p-12 animate-fade-in hidden">
+            <h3 class="font-headline font-black text-2xl text-primary mb-6 flex items-center gap-3"><span
+                class="material-symbols-outlined text-secondary">school</span> Tiếng Anh Thiếu niên</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-all">
+                <h4 class="font-bold text-slate-800 text-lg mb-2">EFT Foundation</h4>
+                <p class="text-slate-500 text-sm">Nền tảng vững chắc cho Trung học cơ sở</p>
+              </div>
+              <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-all">
+                <h4 class="font-bold text-slate-800 text-lg mb-2">EFT Global Teens</h4>
+                <p class="text-slate-500 text-sm">Phát triển kỹ năng hội nhập toàn cầu</p>
+              </div>
+              <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-all">
+                <h4 class="font-bold text-slate-800 text-lg mb-2">Academic English</h4>
+                <p class="text-slate-500 text-sm">Tiếng Anh học thuật chuyên sâu</p>
+              </div>
+              <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-all border-b-4 border-secondary">
+                <h4 class="font-bold text-slate-800 text-lg mb-2">IELTS for Teens</h4>
+                <p class="text-slate-500 text-sm">Luyện thi IELTS dành riêng cho lứa tuổi Thiếu niên</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab Adults -->
+          <div id="tab-adults" class="tab-content p-8 md:p-12 animate-fade-in hidden">
+            <h3 class="font-headline font-black text-2xl text-primary mb-6 flex items-center gap-3"><span
+                class="material-symbols-outlined text-secondary">workspace_premium</span> Tiếng Anh Người lớn & Luyện thi</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div class="bg-indigo-50/50 p-6 rounded-2xl border border-indigo-100/50 hover:shadow-md transition-all">
+                <h4 class="font-bold text-slate-800 text-lg mb-2">English For Life (EFL)</h4>
+                <p class="text-slate-500 text-sm mb-3">Các cấp độ: A2 - B1 - B1+</p>
+                <span class="inline-block bg-white text-indigo-600 text-xs font-bold px-3 py-1 rounded-full border border-indigo-100">Tiếng Anh Tổng quát - Tự tin giao tiếp</span>
+              </div>
+              <div class="bg-indigo-50/50 p-6 rounded-2xl border border-indigo-100/50 hover:shadow-md transition-all">
+                <h4 class="font-bold text-slate-800 text-lg mb-2">Luyện thi VSTEP</h4>
+                <p class="text-slate-500 text-sm mb-3">Chinh phục chứng chỉ B1 - B2</p>
+                <span class="inline-block bg-white text-indigo-600 text-xs font-bold px-3 py-1 rounded-full border border-indigo-100">Chuẩn đầu ra tiếng Anh</span>
+              </div>
+              <div class="bg-indigo-50/50 p-6 rounded-2xl border border-indigo-100/50 hover:shadow-md transition-all md:col-span-2">
+                <h4 class="font-bold text-slate-800 text-lg mb-2">Chương trình IELTS</h4>
+                <div class="flex flex-wrap gap-3 mt-3">
+                  <span class="inline-block bg-white text-indigo-600 font-bold px-4 py-2 rounded-xl border border-indigo-100 shadow-sm">PRE-IELTS</span>
+                  <span class="inline-block bg-white text-indigo-600 font-bold px-4 py-2 rounded-xl border border-indigo-100 shadow-sm">IELTS 4.5 – 6.5</span>
+                  <span class="inline-block bg-white text-indigo-600 font-bold px-4 py-2 rounded-xl border border-indigo-100 shadow-sm">Luyện thi IELTS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- High-Impact Promo Banner (Updated for 8% Existing Students) -->
+        <div class="mt-12">
+          <div class="relative bg-gradient-to-r from-[#002c66] to-[#004aab] rounded-[2rem] p-8 md:p-12 shadow-2xl overflow-hidden group">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-20 -mt-20 blur-3xl animate-pulse-soft"></div>
+            <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10">
+              <div class="flex items-center gap-6">
+                <div class="w-20 h-20 rounded-3xl bg-secondary flex items-center justify-center text-white shadow-[0_15px_30px_rgba(219,20,50,0.4)] transform group-hover:rotate-12 transition-transform duration-500">
+                  <span class="material-symbols-outlined text-4xl">workspace_premium</span>
+                </div>
+                <div>
+                  <h4 class="font-headline font-black text-2xl md:text-3xl text-white uppercase tracking-tight mb-2">Ưu đãi Học Viên Cũ</h4>
+                  <p class="text-blue-100/80 font-bold max-w-md">Giảm trực tiếp 8% học phí khi đăng ký khóa học tiếp theo tại Anh Ngữ Gia Việt.</p>
+                </div>
+              </div>
+              <div class="flex flex-col items-center justify-center">
+                <span class="text-blue-200 font-extrabold text-xs uppercase tracking-widest mb-1">Học Viên Cũ</span>
+                <div class="font-headline font-black text-5xl md:text-6xl text-white tracking-tighter leading-none animate-pulse-soft mt-1">8%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Quyền Lợi Section -->
+    <section id="privileges" class="py-24 px-4 bg-gradient-to-br from-blue-50 via-white to-indigo-50/50">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+          <span class="text-secondary font-black tracking-[0.1em] text-xs sm:text-sm uppercase block mb-4">Đặc quyền học viên</span>
+          <h2 class="font-headline font-black text-3xl md:text-5xl text-primary uppercase tracking-tight leading-tight">
+            Quyền lợi của học viên <br class="hidden sm:block" /> khi <span
+              class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">THAM GIA GIA VIỆT</span></h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div
+            class="group bg-gradient-to-br from-white to-blue-50/30 rounded-[2rem] p-8 border-2 border-transparent hover:border-blue-200 shadow-lg hover:shadow-[0_20px_40px_rgba(59,130,246,0.15)] hover:-translate-y-2 transition-all duration-300">
+            <div
+              class="w-14 h-14 bg-blue-500 text-white rounded-2xl flex items-center justify-center mb-6 shadow-md shadow-blue-500/30 group-hover:scale-110 group-hover:rotate-3 transition-transform">
+              <span class="material-symbols-outlined text-[28px]">checklist</span>
+            </div>
+            <h5
+              class="font-headline font-black text-xl mb-3 uppercase text-slate-800 group-hover:text-blue-600 transition-colors">
+              Kiểm tra đầu vào</h5>
+            <p class="text-slate-500 text-sm font-medium leading-relaxed">Đánh giá chính xác trình độ hiện tại của bạn hoàn toàn <strong class="text-blue-600">Miễn Phí</strong>.</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="group bg-gradient-to-br from-white to-emerald-50/30 rounded-[2rem] p-8 border-2 border-transparent hover:border-emerald-200 shadow-lg hover:shadow-[0_20px_40px_rgba(16,185,129,0.15)] hover:-translate-y-2 transition-all duration-300">
+            <div
+              class="w-14 h-14 bg-emerald-500 text-white rounded-2xl flex items-center justify-center mb-6 shadow-md shadow-emerald-500/30 group-hover:scale-110 group-hover:-rotate-3 transition-transform">
+              <span class="material-symbols-outlined text-[28px]">menu_book</span>
+            </div>
+            <h5
+              class="font-headline font-black text-xl mb-3 uppercase text-slate-800 group-hover:text-emerald-600 transition-colors">
+              Tài liệu học tập</h5>
+            <p class="text-slate-500 text-sm font-medium leading-relaxed">Được cung cấp đầy đủ giáo trình, tài liệu ôn tập bám sát thực tế kỳ thi.</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="group bg-gradient-to-br from-white to-rose-50/30 rounded-[2rem] p-8 border-2 border-transparent hover:border-rose-200 shadow-lg hover:shadow-[0_20px_40px_rgba(244,63,94,0.15)] hover:-translate-y-2 transition-all duration-300">
+            <div
+              class="w-14 h-14 bg-rose-500 text-white rounded-2xl flex items-center justify-center mb-6 shadow-md shadow-rose-500/30 group-hover:scale-110 group-hover:rotate-3 transition-transform">
+              <span class="material-symbols-outlined text-[28px]">analytics</span>
+            </div>
+            <h5
+              class="font-headline font-black text-xl mb-3 uppercase text-slate-800 group-hover:text-rose-600 transition-colors">
+              IELTS Mock Test</h5>
+            <p class="text-slate-500 text-sm font-medium leading-relaxed">Hỗ trợ thi thử IELTS và tham gia <strong class="text-blue-600">miễn phí</strong> IELTS Speaking Mock Test Club.</p>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="group bg-gradient-to-br from-white to-amber-50/30 rounded-[2rem] p-8 border-2 border-transparent hover:border-amber-200 shadow-lg hover:shadow-[0_20px_40px_rgba(245,158,11,0.15)] hover:-translate-y-2 transition-all duration-300">
+            <div
+              class="w-14 h-14 bg-amber-500 text-white rounded-2xl flex items-center justify-center mb-6 shadow-md shadow-amber-500/30 group-hover:scale-110 group-hover:-rotate-3 transition-transform">
+              <span class="material-symbols-outlined text-[28px]">emoji_events</span>
+            </div>
+            <h5
+              class="font-headline font-black text-xl mb-3 uppercase text-slate-800 group-hover:text-amber-600 transition-colors">
+              Câu lạc bộ E-zone</h5>
+            <p class="text-slate-500 text-sm font-medium leading-relaxed">Tham gia các hoạt động và trò chơi thú vị hàng tháng cùng E-zone.</p>
+          </div>
+
+          <!-- Card 5 -->
+          <div
+            class="group bg-gradient-to-br from-white to-purple-50/30 rounded-[2rem] p-8 border-2 border-transparent hover:border-purple-200 shadow-lg hover:shadow-[0_20px_40px_rgba(168,85,247,0.15)] hover:-translate-y-2 transition-all duration-300">
+            <div
+              class="w-14 h-14 bg-purple-500 text-white rounded-2xl flex items-center justify-center mb-6 shadow-md shadow-purple-500/30 group-hover:scale-110 group-hover:rotate-3 transition-transform">
+              <span class="material-symbols-outlined text-[28px]">forum</span>
+            </div>
+            <h5
+              class="font-headline font-black text-xl mb-3 uppercase text-slate-800 group-hover:text-purple-600 transition-colors">
+              Workshop & Chatty</h5>
+            <p class="text-slate-500 text-sm font-medium leading-relaxed">Tham gia Câu lạc bộ Chatty Club <strong class="text-blue-600">miễn phí</strong> và nhiều workshop hữu ích khác tại 4Cs Cafe.</p>
+          </div>
+
+          <!-- Card 6 -->
+          <div
+            class="group bg-gradient-to-br from-white to-cyan-50/30 rounded-[2rem] p-8 border-2 border-transparent hover:border-cyan-200 shadow-lg hover:shadow-[0_20px_40px_rgba(6,182,212,0.15)] hover:-translate-y-2 transition-all duration-300">
+            <div
+              class="w-14 h-14 bg-cyan-500 text-white rounded-2xl flex items-center justify-center mb-6 shadow-md shadow-cyan-500/30 group-hover:scale-110 group-hover:-rotate-3 transition-transform">
+              <span class="material-symbols-outlined text-[28px]">coffee</span>
+            </div>
+            <h5
+              class="font-headline font-black text-xl mb-3 uppercase text-slate-800 group-hover:text-cyan-600 transition-colors">
+              Đặc quyền 4Cs Cafe</h5>
+            <p class="text-slate-500 text-sm font-medium leading-relaxed">Ưu đãi <strong class="text-red-600">giảm ngay 10%</strong> tổng hóa đơn thức uống và đồ ăn nhẹ tại 4Cs Cafe.</p>
+          </div>
+
+          <!-- Card 7 -->
+          <div
+            class="group bg-gradient-to-br from-white to-teal-50/30 rounded-[2rem] p-8 border-2 border-transparent hover:border-teal-200 shadow-lg hover:shadow-[0_20px_40px_rgba(20,184,166,0.15)] hover:-translate-y-2 transition-all duration-300">
+            <div
+              class="w-14 h-14 bg-teal-500 text-white rounded-2xl flex items-center justify-center mb-6 shadow-md shadow-teal-500/30 group-hover:scale-110 group-hover:rotate-3 transition-transform">
+              <span class="material-symbols-outlined text-[28px]">auto_stories</span>
+            </div>
+            <h5
+              class="font-headline font-black text-xl mb-3 uppercase text-slate-800 group-hover:text-teal-600 transition-colors">
+              Thư viện ngoại văn</h5>
+            <p class="text-slate-500 text-sm font-medium leading-relaxed">Đọc sách <strong class="text-blue-600">miễn phí</strong> tại thư viện 4Cs với hơn 2500 đầu sách đa dạng.</p>
+          </div>
+
+          <!-- Card 8 -->
+          <div
+            class="group bg-gradient-to-br from-white to-indigo-50/30 rounded-[2rem] p-8 border-2 border-transparent hover:border-indigo-200 shadow-lg hover:shadow-[0_20px_40px_rgba(99,102,241,0.15)] hover:-translate-y-2 transition-all duration-300">
+            <div
+              class="w-14 h-14 bg-indigo-500 text-white rounded-2xl flex items-center justify-center mb-6 shadow-md shadow-indigo-500/30 group-hover:scale-110 group-hover:-rotate-3 transition-transform">
+              <span class="material-symbols-outlined text-[28px]">airplane_ticket</span>
+            </div>
+            <h5
+              class="font-headline font-black text-xl mb-3 uppercase text-slate-800 group-hover:text-indigo-600 transition-colors">
+              Tư vấn du học</h5>
+            <p class="text-slate-500 text-sm font-medium leading-relaxed">Hỗ trợ tư vấn du học và trại hè quốc tế cùng Du học VISA.</p>
+          </div>
+
+          <!-- Card 9 -->
+          <div
+            class="group bg-gradient-to-br from-white to-pink-50/30 rounded-[2rem] p-8 border-2 border-transparent hover:border-pink-200 shadow-lg hover:shadow-[0_20px_40px_rgba(236,72,153,0.15)] hover:-translate-y-2 transition-all duration-300">
+            <div
+              class="w-14 h-14 bg-pink-500 text-white rounded-2xl flex items-center justify-center mb-6 shadow-md shadow-pink-500/30 group-hover:scale-110 group-hover:rotate-3 transition-transform">
+              <span class="material-symbols-outlined text-[28px]">child_care</span>
+            </div>
+            <h5
+              class="font-headline font-black text-xl mb-3 uppercase text-slate-800 group-hover:text-pink-600 transition-colors">
+              Kids Club</h5>
+            <p class="text-slate-500 text-sm font-medium leading-relaxed">Tham gia Câu lạc bộ tương tác tiếng Anh Kids Club với <strong class="text-red-600">mức giá ưu đãi</strong>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-24 px-4 bg-white border-t border-slate-50">
+      <div class="max-w-6xl mx-auto">
+        <div class="bg-gradient-to-r from-primary to-blue-900 p-12 md:p-20 rounded-[3rem] text-center text-white shadow-2xl relative overflow-hidden">
+          <div class="relative z-10">
+            <h2 class="font-headline font-black text-4xl md:text-5xl mb-8 uppercase tracking-tight px-4">
+              <span class="block mb-2 md:mb-4">BẤT ĐẦU HÀNH TRÌNH</span>
+              <span class="block">BỨT PHÁ TIẾNG ANH NGAY HÔM NAY!</span>
+            </h2>
+            <p class="text-blue-100 font-bold mb-12 text-lg opacity-80 px-6">Giảm 8% học phí dành riêng cho Học viên cũ Gia Việt</p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 w-full max-w-2xl mx-auto">
+              <a href="https://zalo.me/0962460077" target="_blank"
+                class="flex flex-1 w-full items-center justify-center bg-white text-primary py-4 sm:py-5 rounded-full font-headline font-black shadow-xl hover:bg-slate-50 transition-all uppercase tracking-widest text-sm whitespace-nowrap">Đăng ký giữ chỗ</a>
+              <a href="tel:02923831000"
+                class="flex flex-1 w-full items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white py-4 sm:py-5 rounded-full transition-colors border border-white/20 whitespace-nowrap">
+                <span class="material-symbols-outlined text-lg text-white">call</span>
+                <span class="font-headline font-black text-base sm:text-lg tracking-widest">0292 383 1000</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#001a3d] text-white py-12 px-4 border-t border-blue-950">
+    <div class="max-w-6xl mx-auto text-center">
+      <img src="./logo.png" alt="Logo Gia Việt" class="h-12 w-auto object-contain mx-auto mb-6 brightness-0 invert opacity-90" />
+      
+      <!-- Locations List in Footer -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 w-full max-w-6xl mx-auto mb-10 text-blue-200 text-sm text-left border-t border-blue-900/50 pt-8 mt-4">
+        <!-- Head Office -->
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="material-symbols-outlined text-secondary text-[20px]">location_city</span>
+            <h4 class="font-bold text-white uppercase tracking-wide">Trụ sở chính</h4>
+          </div>
+          <p class="mb-3 leading-relaxed">39 Đường Mậu Thân, Phường Ninh Kiều, TP. Cần Thơ</p>
+          <a href="tel:02923831000" class="block font-bold text-secondary hover:text-white transition-colors">0292 383 1000</a>
+        </div>
+
+        <!-- Branch 30/4 -->
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="material-symbols-outlined text-secondary text-[20px]">storefront</span>
+            <h4 class="font-bold text-white uppercase tracking-wide">Chi nhánh 30/4</h4>
+          </div>
+          <p class="mb-3 leading-relaxed">545 Đường 30/4, Phường Tân An, TP. Cần Thơ</p>
+          <a href="tel:02922209000" class="block font-bold text-secondary hover:text-white transition-colors">0292 220 9000</a>
+        </div>
+
+        <!-- Branch Binh Minh -->
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="material-symbols-outlined text-secondary text-[20px]">storefront</span>
+            <h4 class="font-bold text-white uppercase tracking-wide">Chi nhánh Bình Minh</h4>
+          </div>
+          <p class="mb-3 leading-relaxed">112 Đường Lê Văn Vị, Phường Cái Vồn, Vĩnh Long</p>
+          <a href="tel:02706555000" class="block font-bold text-secondary hover:text-white transition-colors">0270 655 5000</a>
+        </div>
+
+        <!-- Branch O Mon -->
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="material-symbols-outlined text-secondary text-[20px]">storefront</span>
+            <h4 class="font-bold text-white uppercase tracking-wide">Chi nhánh Ô Môn</h4>
+          </div>
+          <p class="mb-3 leading-relaxed">21 Đường Trần Nguyên Hãn, Phường Ô Môn, TP. Cần Thơ</p>
+          <a href="tel:02926266000" class="block font-bold text-secondary hover:text-white transition-colors">0292 626 6000</a>
+        </div>
+      </div>
+
+      <div class="w-full border-t border-blue-900/50 pt-6">
+        <p class="text-blue-200 text-sm mb-2">© 2026 Trung Tâm Anh Ngữ Gia Việt. All rights reserved.</p>
+        <p class="text-blue-300 text-xs">Trụ sở chính: 39 Đường Mậu Thân, Phường Ninh Kiều, TP. Cần Thơ</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function switchBranch(branchId) {
+      // Hide all content
+      document.querySelectorAll('.branch-content').forEach(el => el.classList.add('hidden'));
+
+      // Reset all buttons
+      document.querySelectorAll('.branch-tab').forEach(el => {
+        el.classList.remove('active', 'bg-gradient-to-r', 'from-[#002c66]', 'to-[#1a4a99]', 'text-white', 'shadow-[0_10px_25px_-5px_rgba(0,44,102,0.4)]');
+        el.classList.add('bg-white', 'text-slate-700');
+      });
+
+      // Show selected content
+      document.getElementById('tab-' + branchId).classList.remove('hidden');
+
+      // Highlight selected button
+      const activeBtn = document.getElementById('btn-' + branchId);
+      activeBtn.classList.remove('bg-white', 'text-slate-700');
+      activeBtn.classList.add('active', 'bg-gradient-to-r', 'from-[#002c66]', 'to-[#1a4a99]', 'text-white', 'shadow-[0_10px_25px_-5px_rgba(0,44,102,0.4)]');
+    }
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+      document.querySelectorAll('.tab-btn').forEach(el => {
+        el.classList.remove('bg-[#002c66]', 'text-white', 'shadow-lg');
+        el.classList.add('bg-slate-100', 'text-slate-600');
+      });
+      document.getElementById('tab-' + tabId).classList.remove('hidden');
+      document.getElementById('btn-' + tabId).classList.remove('bg-slate-100', 'text-slate-600');
+      document.getElementById('btn-' + tabId).classList.add('bg-[#002c66]', 'text-white', 'shadow-lg');
+    }
+  </script>
+
+  <!-- Sticky Promotion Widget -->
+  <a href="https://zalo.me/0962460077" target="_blank" class="fixed top-1/2 right-0 -translate-y-1/2 z-50 flex items-center group cursor-pointer transition-transform hover:-translate-x-2">
+    <div class="bg-gradient-to-l from-amber-600 to-orange-500 text-white p-3 py-6 rounded-l-2xl shadow-[-5px_0_20px_rgba(245,158,11,0.3)] flex flex-col items-center gap-2 border-y border-l border-amber-400">
+      <span class="material-symbols-outlined text-3xl animate-bounce">stars</span>
+      <div class="writing-mode-vertical text-center font-headline font-black uppercase tracking-widest text-sm" style="writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg);">
+        Giảm 8% Học phí cho Học viên cũ
+      </div>
+    </div>
+  </a>
+
+</body>
+</html>

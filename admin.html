@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gia Việt Admin | Quản Lý Lịch Khai Giảng & Sĩ Số</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#002c66",
+            "primary-light": "#1a4a99",
+            "secondary": "#db1432",
+            "secondary-dark": "#b7102a",
+          },
+          fontFamily: {
+            "headline": ["Manrope", "sans-serif"],
+            "body": ["Inter", "sans-serif"],
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    body {
+      background-color: #f1f5f9;
+      -webkit-font-smoothing: antialiased;
+    }
+    .branch-btn.active {
+      background: linear-gradient(135deg, #002c66 0%, #1a4a99 100%);
+      color: white;
+      box-shadow: 0 4px 12px rgba(0, 44, 102, 0.2);
+    }
+    .group-btn.active {
+      background-color: #002c66;
+      color: white;
+    }
+  </style>
+</head>
+
+<body class="text-slate-800 font-body overflow-x-hidden min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-white border-b border-slate-200 px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4 sticky top-0 z-50 shadow-sm">
+    <div class="flex items-center gap-3">
+      <div class="bg-primary text-white p-2 rounded-xl">
+        <span class="material-symbols-outlined text-2xl block">school</span>
+      </div>
+      <div>
+        <h1 class="font-headline font-black text-lg text-primary tracking-tight uppercase">Anh Ngữ Gia Việt</h1>
+        <p class="text-xs text-slate-400 font-bold uppercase tracking-wider">Hệ thống Quản lý Sĩ số & Lịch khai giảng</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-3 w-full sm:w-auto justify-end">
+      <a href="/index.html" target="_blank"
+        class="flex items-center gap-2 border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 px-4 py-2 rounded-xl font-bold text-sm transition-all shadow-sm">
+        <span class="material-symbols-outlined text-lg">visibility</span>
+        Xem Landing Page
+      </a>
+      <button onclick="saveData()" id="saveBtn"
+        class="flex items-center gap-2 bg-secondary hover:bg-secondary-dark text-white px-5 py-2.5 rounded-xl font-headline font-bold text-sm tracking-wide shadow-md hover:shadow-lg transition-all active:scale-95">
+        <span class="material-symbols-outlined text-lg">save</span>
+        LƯU & BIÊN DỊCH
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="flex-1 max-w-7xl w-full mx-auto p-4 md:p-6 flex flex-col lg:flex-row gap-6">
+
+    <!-- Sidebar: Branches selection -->
+    <aside class="w-full lg:w-64 shrink-0 flex flex-col gap-3">
+      <h3 class="font-headline font-extrabold text-xs text-slate-400 uppercase tracking-widest px-2">Chọn Chi Nhánh</h3>
+      <div class="flex flex-row lg:flex-col overflow-x-auto lg:overflow-x-visible gap-2 pb-2 lg:pb-0" id="branchSelector">
+        <!-- Branch buttons will be injected here -->
+      </div>
+    </aside>
+
+    <!-- Content Workspace -->
+    <section class="flex-1 flex flex-col gap-6">
+      
+      <!-- Branch Info Card -->
+      <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+        <div>
+          <h2 class="font-headline font-black text-2xl text-primary" id="activeBranchTitle">TRỤ SỞ CHÍNH</h2>
+          <p class="text-slate-500 text-sm mt-1 flex items-center gap-1.5" id="activeBranchAddress">
+            <span class="material-symbols-outlined text-sm text-slate-400">location_on</span>
+            39 Đường Mậu Thân, Phường Ninh Kiều, TP. Cần Thơ
+          </p>
+        </div>
+        <div class="flex items-center gap-2 text-sm font-bold text-slate-600 bg-slate-50 px-4 py-2 rounded-xl border border-slate-100 shrink-0" id="activeBranchPhone">
+          <span class="material-symbols-outlined text-secondary text-lg">call</span>
+          0292 383 1000
+        </div>
+      </div>
+
+      <!-- Group Selection (KIDS vs ADU) -->
+      <div class="flex border-b border-slate-200 gap-2">
+        <button onclick="switchGroup('kids')" id="group-kids-btn"
+          class="group-btn active px-6 py-3 font-headline font-bold text-sm tracking-wide border-b-2 border-primary text-primary transition-all rounded-t-xl hover:bg-slate-50">
+          CHƯƠNG TRÌNH KIDS & TEENS
+        </button>
+        <button onclick="switchGroup('adu')" id="group-adu-btn"
+          class="group-btn px-6 py-3 font-headline font-bold text-sm tracking-wide border-b-2 border-transparent text-slate-500 hover:text-slate-700 transition-all rounded-t-xl hover:bg-slate-50">
+          CHƯƠNG TRÌNH NGƯỜI LỚN & IELTS
+        </button>
+      </div>
+
+      <!-- Classes Management Table Card -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden flex flex-col">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse min-w-[800px]">
+            <thead>
+              <tr class="bg-slate-50 border-b border-slate-200 text-slate-500 font-extrabold text-[11px] uppercase tracking-wider">
+                <th class="p-4 pl-6 w-[25%]">Tên lớp / Chương trình</th>
+                <th class="p-4 w-[20%]">Lịch học / Giờ học</th>
+                <th class="p-4 w-[15%]">Khai giảng</th>
+                <th class="p-4 w-[12%] text-center">Sĩ số hiện tại</th>
+                <th class="p-4 w-[12%] text-center">Sĩ số tối đa</th>
+                <th class="p-4 w-[16%]">Tình trạng</th>
+                <th class="p-4 w-[15%] text-right">Học phí</th>
+                <th class="p-4 w-[8%] text-center">Xóa</th>
+              </tr>
+            </thead>
+            <tbody id="classTableBody" class="text-slate-700 font-medium text-sm divide-y divide-slate-100">
+              <!-- Class rows will be dynamically rendered here -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="hidden p-12 text-center text-slate-400">
+          <span class="material-symbols-outlined text-4xl mb-2">dashboard_customize</span>
+          <p class="font-medium">Chưa có lớp nào được tạo cho danh mục này.</p>
+        </div>
+
+        <!-- Add Button Footer -->
+        <div class="p-4 bg-slate-50 border-t border-slate-100 flex justify-start">
+          <button onclick="addNewClass()"
+            class="flex items-center gap-1.5 text-primary hover:text-primary-light font-bold text-sm px-4 py-2 border border-dashed border-slate-300 hover:border-primary rounded-xl transition-all bg-white shadow-sm active:scale-95">
+            <span class="material-symbols-outlined text-lg">add_circle</span>
+            Thêm lớp học mới
+          </button>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Sticky Toast Notification container -->
+  <div id="toastContainer" class="fixed bottom-6 right-6 z-50 flex flex-col gap-3 pointer-events-none"></div>
+
+  <!-- JS Implementation -->
+  <script>
+    // Configuration details
+    const BRANCHES = [
+      {
+        sheetName: "TruSoChinh",
+        id: "truso",
+        name: "TRỤ SỞ CHÍNH",
+        icon: "corporate_fare",
+        tabLabel: "Trụ sở chính",
+        phone: "0292 383 1000",
+        address: "39 Đường Mậu Thân, Phường Ninh Kiều, TP. Cần Thơ",
+      },
+      {
+        sheetName: "CN30_4",
+        id: "cn304",
+        name: "CHI NHÁNH 30/4",
+        icon: "storefront",
+        tabLabel: "Chi nhánh 30/4",
+        phone: "0292 220 9000",
+        address: "545 Đường 30/4, Phường Tân An, TP. Cần Thơ",
+      },
+      {
+        sheetName: "CNOMon",
+        id: "cnomon",
+        name: "CHI NHÁNH Ô MÔN",
+        icon: "storefront",
+        tabLabel: "Chi nhánh Ô Môn",
+        phone: "0292 626 6000",
+        address: "21 Đường Trần Nguyên Hãn, Phường Ô Môn, TP. Cần Thơ",
+      },
+      {
+        sheetName: "CNBinhMinh",
+        id: "cnbinhminh",
+        name: "CHI NHÁNH BÌNH MINH",
+        icon: "storefront",
+        tabLabel: "Chi nhánh Bình Minh",
+        phone: "0270 655 5000",
+        address: "112 Đường Lê Văn Vị, Phường Cái Vồn, Vĩnh Long",
+      },
+    ];
+
+    // Local state
+    let appData = {};
+    let activeBranch = "TruSoChinh"; // stores sheetName
+    let activeGroup = "kids"; // 'kids' or 'adu'
+
+    // Init Page
+    window.addEventListener("DOMContentLoaded", () => {
+      renderBranchButtons();
+      fetchData();
+    });
+
+    // Render left Sidebar buttons
+    function renderBranchButtons() {
+      const container = document.getElementById("branchSelector");
+      container.innerHTML = BRANCHES.map(branch => {
+        const isActive = branch.sheetName === activeBranch;
+        return `
+          <button onclick="switchBranch('${branch.sheetName}')" id="btn-${branch.sheetName}"
+            class="branch-btn shrink-0 w-max lg:w-full flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm transition-all border border-transparent text-slate-600 hover:bg-slate-100 hover:text-slate-800 ${isActive ? 'active' : 'bg-white shadow-sm'}">
+            <span class="material-symbols-outlined text-lg">${branch.icon}</span>
+            <span>${branch.tabLabel}</span>
+          </button>
+        `;
+      }).join('');
+    }
+
+    // Switch Branch
+    function switchBranch(sheetName) {
+      // Remove active from previous button
+      const oldBtn = document.getElementById(`btn-${activeBranch}`);
+      if (oldBtn) {
+        oldBtn.classList.remove('active');
+        oldBtn.classList.add('bg-white', 'shadow-sm');
+      }
+
+      activeBranch = sheetName;
+      
+      // Set active to new button
+      const newBtn = document.getElementById(`btn-${activeBranch}`);
+      if (newBtn) {
+        newBtn.classList.add('active');
+        newBtn.classList.remove('bg-white', 'shadow-sm');
+      }
+
+      // Update info cards
+      const branchInfo = BRANCHES.find(b => b.sheetName === sheetName);
+      if (branchInfo) {
+        document.getElementById("activeBranchTitle").textContent = branchInfo.name;
+        document.getElementById("activeBranchAddress").innerHTML = `
+          <span class="material-symbols-outlined text-sm text-slate-400">location_on</span>
+          ${branchInfo.address}
+        `;
+        document.getElementById("activeBranchPhone").innerHTML = `
+          <span class="material-symbols-outlined text-secondary text-lg">call</span>
+          ${branchInfo.phone}
+        `;
+      }
+
+      renderTable();
+    }
+
+    // Switch between Kids and Adults program groups
+    function switchGroup(group) {
+      document.querySelectorAll(".group-btn").forEach(btn => {
+        btn.classList.remove('active', 'border-primary', 'text-primary');
+        btn.classList.add('border-transparent', 'text-slate-500');
+      });
+
+      const activeBtn = document.getElementById(`group-${group}-btn`);
+      activeBtn.classList.add('active', 'border-primary', 'text-primary');
+      activeBtn.classList.remove('border-transparent', 'text-slate-500');
+
+      activeGroup = group;
+      renderTable();
+    }
+
+    // Fetch class list from API
+    async function fetchData() {
+      try {
+        const res = await fetch("/api/data");
+        appData = await res.json();
+        renderTable();
+      } catch (err) {
+        console.error("Fetch error:", err);
+        showToast("Không thể tải dữ liệu từ máy chủ local. Vui lòng kiểm tra lại server.", "error");
+      }
+    }
+
+    // Render table rows based on current state
+    function renderTable() {
+      const tbody = document.getElementById("classTableBody");
+      const emptyState = document.getElementById("emptyState");
+      
+      const items = (appData[activeBranch] && appData[activeBranch][activeGroup]) || [];
+      
+      if (items.length === 0) {
+        tbody.innerHTML = "";
+        emptyState.classList.remove("hidden");
+        return;
+      }
+      
+      emptyState.classList.add("hidden");
+      
+      tbody.innerHTML = items.map((item, index) => {
+        const status = calculateStatus(item.current, item.max);
+        
+        return `
+          <tr class="hover:bg-slate-50/50 transition-colors">
+            <td class="p-3 pl-6">
+              <input type="text" value="${escapeHtml(item.name)}" 
+                oninput="updateValue('${activeBranch}', '${activeGroup}', ${index}, 'name', this.value)"
+                class="w-full font-bold text-primary focus:ring-primary focus:border-primary border-slate-200 hover:border-slate-300 rounded-lg text-sm"
+                placeholder="Tên lớp (vd: Family & Friends 1A)" />
+            </td>
+            <td class="p-3">
+              <input type="text" value="${escapeHtml(item.time)}" 
+                oninput="updateValue('${activeBranch}', '${activeGroup}', ${index}, 'time', this.value)"
+                class="w-full focus:ring-primary focus:border-primary border-slate-200 hover:border-slate-300 rounded-lg text-sm text-slate-600 font-semibold"
+                placeholder="Lịch học (vd: 17:45 - 19:15)" />
+            </td>
+            <td class="p-3">
+              <input type="text" value="${escapeHtml(item.date)}" 
+                oninput="updateValue('${activeBranch}', '${activeGroup}', ${index}, 'date', this.value)"
+                class="w-full focus:ring-primary focus:border-primary border-slate-200 hover:border-slate-300 rounded-lg text-sm text-slate-600"
+                placeholder="Ngày khai giảng (vd: 13/07/2026)" />
+            </td>
+            <td class="p-3">
+              <input type="number" min="0" value="${item.current}" 
+                oninput="updateEnrollment('${activeBranch}', '${activeGroup}', ${index}, 'current', parseInt(this.value) || 0)"
+                class="w-20 mx-auto block text-center focus:ring-primary focus:border-primary border-slate-200 hover:border-slate-300 rounded-lg text-sm font-bold text-slate-800" />
+            </td>
+            <td class="p-3">
+              <input type="number" min="1" value="${item.max}" 
+                oninput="updateEnrollment('${activeBranch}', '${activeGroup}', ${index}, 'max', parseInt(this.value) || 22)"
+                class="w-20 mx-auto block text-center focus:ring-primary focus:border-primary border-slate-200 hover:border-slate-300 rounded-lg text-sm font-bold text-slate-500" />
+            </td>
+            <td class="p-3" id="badge-container-${index}">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold ${status.badgeClass}">
+                <span class="w-1.5 h-1.5 rounded-full ${status.dotClass}"></span>
+                <span>${status.label}</span>
+              </span>
+            </td>
+            <td class="p-3">
+              <div class="relative rounded-lg shadow-sm">
+                <input type="number" min="0" step="50000" value="${item.fee}" 
+                  oninput="updateValue('${activeBranch}', '${activeGroup}', ${index}, 'fee', parseInt(this.value) || 0)"
+                  class="w-full text-right pr-7 focus:ring-primary focus:border-primary border-slate-200 hover:border-slate-300 rounded-lg text-sm font-black text-primary" 
+                  placeholder="2500000" />
+                <div class="absolute inset-y-0 right-0 pr-2.5 flex items-center pointer-events-none">
+                  <span class="text-xs text-slate-400 font-bold">đ</span>
+                </div>
+              </div>
+            </td>
+            <td class="p-3 text-center">
+              <button onclick="deleteClass(${index})" 
+                class="text-slate-400 hover:text-red-600 transition-colors p-1.5 hover:bg-slate-100 rounded-lg">
+                <span class="material-symbols-outlined text-lg block">delete</span>
+              </button>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    // Dynamic value changes handler
+    function updateValue(branch, group, idx, key, val) {
+      if (appData[branch] && appData[branch][group] && appData[branch][group][idx]) {
+        appData[branch][group][idx][key] = val;
+      }
+    }
+
+    // Dynamic enrollment changes handler (forces badge updates immediately)
+    function updateEnrollment(branch, group, idx, key, val) {
+      if (appData[branch] && appData[branch][group] && appData[branch][group][idx]) {
+        appData[branch][group][idx][key] = val;
+        
+        // Dynamic recompute status badge on fly
+        const item = appData[branch][group][idx];
+        const status = calculateStatus(item.current, item.max);
+        
+        const container = document.getElementById(`badge-container-${idx}`);
+        if (container) {
+          container.innerHTML = `
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold ${status.badgeClass}">
+              <span class="w-1.5 h-1.5 rounded-full ${status.dotClass}"></span>
+              <span>${status.label}</span>
+            </span>
+          `;
+        }
+      }
+    }
+
+    // Calculate status badge dynamically
+    function calculateStatus(current, max) {
+      if (current >= max) {
+        return {
+          label: "Hết slot",
+          badgeClass: "bg-slate-100 text-slate-500 border border-slate-200",
+          dotClass: "bg-slate-400",
+        };
+      } else if (current >= 16) {
+        return {
+          label: "Sắp hết slot",
+          badgeClass: "bg-red-50 text-red-600 border border-red-100 animate-[pulse_2.5s_infinite]",
+          dotClass: "bg-red-500",
+        };
+      } else {
+        return {
+          label: "Còn slot",
+          badgeClass: "bg-emerald-50 text-emerald-600 border border-emerald-100",
+          dotClass: "bg-emerald-500",
+        };
+      }
+    }
+
+    // Add class item
+    function addNewClass() {
+      if (!appData[activeBranch]) {
+        appData[activeBranch] = { kids: [], adu: [] };
+      }
+      if (!appData[activeBranch][activeGroup]) {
+        appData[activeBranch][activeGroup] = [];
+      }
+      
+      const newClass = {
+        name: "",
+        time: "",
+        date: "",
+        current: 0,
+        max: 22,
+        fee: 2500000
+      };
+      
+      appData[activeBranch][activeGroup].push(newClass);
+      renderTable();
+      showToast("Đã thêm một dòng lớp học mới. Hãy nhập nội dung và lưu lại.", "info");
+    }
+
+    // Delete class item
+    function deleteClass(index) {
+      if (confirm("Bạn có chắc chắn muốn xóa lớp học này?")) {
+        appData[activeBranch][activeGroup].splice(index, 1);
+        renderTable();
+        showToast("Đã xóa dòng lớp học khỏi danh sách.", "warning");
+      }
+    }
+
+    // Save and compile back
+    async function saveData() {
+      const saveBtn = document.getElementById("saveBtn");
+      saveBtn.disabled = true;
+      saveBtn.innerHTML = `<span class="material-symbols-outlined text-lg animate-spin">sync</span> ĐANG LƯU...`;
+      
+      try {
+        const res = await fetch("/api/save", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(appData)
+        });
+        
+        const result = await res.json();
+        
+        if (result.success) {
+          showToast("🎉 Lưu dữ liệu và Biên dịch Landing Page thành công!", "success");
+        } else {
+          showToast("❌ " + result.message, "error");
+        }
+      } catch (err) {
+        console.error("Save error:", err);
+        showToast("❌ Lỗi mạng: Không thể đồng bộ dữ liệu với máy chủ local.", "error");
+      } finally {
+        saveBtn.disabled = false;
+        saveBtn.innerHTML = `<span class="material-symbols-outlined text-lg">save</span> LƯU & BIÊN DỊCH`;
+      }
+    }
+
+    // Utility: Toast notifications
+    function showToast(message, type = "success") {
+      const container = document.getElementById("toastContainer");
+      const toast = document.createElement("div");
+      
+      let typeClass = "bg-emerald-50 text-emerald-800 border-emerald-200";
+      let icon = "check_circle";
+      
+      if (type === "error") {
+        typeClass = "bg-red-50 text-red-800 border-red-200";
+        icon = "error";
+      } else if (type === "warning") {
+        typeClass = "bg-amber-50 text-amber-800 border-amber-200";
+        icon = "warning";
+      } else if (type === "info") {
+        typeClass = "bg-blue-50 text-blue-800 border-blue-200";
+        icon = "info";
+      }
+
+      toast.className = `flex items-center gap-3 p-4 rounded-xl border shadow-lg pointer-events-auto transition-all duration-300 transform translate-y-2 opacity-0 ${typeClass}`;
+      toast.innerHTML = `
+        <span class="material-symbols-outlined">${icon}</span>
+        <div class="text-sm font-bold">${message}</div>
+      `;
+      
+      container.appendChild(toast);
+      
+      // Trigger animations
+      setTimeout(() => {
+        toast.classList.remove("translate-y-2", "opacity-0");
+      }, 10);
+      
+      // Auto-remove after 4s
+      setTimeout(() => {
+        toast.classList.add("opacity-0", "translate-y-[-8px]");
+        setTimeout(() => {
+          toast.remove();
+        }, 300);
+      }, 4000);
+    }
+
+    // Utility: escape html values
+    function escapeHtml(string) {
+      if (!string) return "";
+      return String(string)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+  </script>
+</body>
+
+</html>

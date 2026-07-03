@@ -1,0 +1,44 @@
+{
+  "TruSoChinh": {
+    "kids": [
+      { "name": "EFT - Global Teens 1A", "time": "17:45 - 19:15", "date": "13/07/2026", "current": 5, "max": 22, "fee": 2800000 },
+      { "name": "Family & Friends 1A", "time": "17:45 - 19:15", "date": "13/07/2026", "current": 18, "max": 22, "fee": 2500000 },
+      { "name": "First Friends 1A", "time": "17:45 - 19:15", "date": "15/07/2026", "current": 22, "max": 22, "fee": 2500000 },
+      { "name": "EFT - Foundation 1", "time": "17:45 - 19:15", "date": "20/07/2026", "current": 12, "max": 22, "fee": 2800000 }
+    ],
+    "adu": [
+      { "name": "EFL B1+ (In-house Book)", "time": "Tối 357 (19:30 - 21:00)", "date": "13/07/2026", "current": 8, "max": 22, "fee": 2800000 },
+      { "name": "IELTS 5.5", "time": "Tối 246 (19:30 - 21:00)", "date": "15/07/2026", "current": 17, "max": 22, "fee": 3800000 },
+      { "name": "PRE-IELTS (In-house Book)", "time": "Tối 357 (19:30 - 21:00)", "date": "20/07/2026", "current": 22, "max": 22, "fee": 3200000 }
+    ]
+  },
+  "CN30_4": {
+    "kids": [
+      { "name": "EFT - Foundation 1", "time": "17:45 - 19:15", "date": "14/07/2026", "current": 3, "max": 22, "fee": 2800000 },
+      { "name": "First Friends 1A", "time": "17:45 - 19:15", "date": "16/07/2026", "current": 15, "max": 22, "fee": 2500000 },
+      { "name": "Family & Friends Starters A", "time": "17:45 - 19:15", "date": "18/07/2026", "current": 19, "max": 22, "fee": 2500000 }
+    ],
+    "adu": [
+      { "name": "EFL A2 (In-house Book)", "time": "Tối 357 (19:30 - 21:00)", "date": "13/07/2026", "current": 10, "max": 22, "fee": 2800000 }
+    ]
+  },
+  "CNOMon": {
+    "kids": [
+      { "name": "First Friends 1A", "time": "17:45 - 19:15", "date": "13/07/2026", "current": 4, "max": 22, "fee": 2500000 },
+      { "name": "Family & Friends 1A", "time": "17:45 - 19:15", "date": "13/07/2026", "current": 12, "max": 22, "fee": 2500000 },
+      { "name": "Ngữ pháp Hè (THCS)", "time": "17:45 - 19:15", "date": "15/07/2026", "current": 21, "max": 22, "fee": 2500000 }
+    ],
+    "adu": [
+      { "name": "IELTS LUYỆN THI", "time": "Tối 246 (19:30 - 21:00)", "date": "20/07/2026", "current": 14, "max": 22, "fee": 4500000 }
+    ]
+  },
+  "CNBinhMinh": {
+    "kids": [
+      { "name": "First Friends 1A", "time": "17:45 - 19:15", "date": "13/07/2026", "current": 6, "max": 22, "fee": 2500000 },
+      { "name": "Family & Friends 1A", "time": "17:45 - 19:15", "date": "13/07/2026", "current": 22, "max": 22, "fee": 2500000 }
+    ],
+    "adu": [
+      { "name": "IELTS 4.5 FOR TEENS A", "time": "Tối 246 (19:30 - 21:00)", "date": "15/07/2026", "current": 11, "max": 22, "fee": 2800000 }
+    ]
+  }
+}
